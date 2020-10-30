@@ -12,6 +12,9 @@ import com.kuzari.check.impl.fly.FlyB;
 import com.kuzari.check.impl.killaura.*;
 import com.kuzari.check.impl.reach.ReachA;
 import com.kuzari.check.impl.timer.TimerA;
+import com.kuzari.check.impl.velocity.VelocityA;
+import com.kuzari.check.impl.velocity.VelocityB;
+import com.kuzari.check.impl.velocity.VelocityC;
 import com.kuzari.util.location.Direction;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,6 +34,7 @@ public class PlayerData {
         ReachA.class,
         BadPacketsA.class, BadPacketsB.class,
         KillAuraA.class, KillAuraB.class, KillAuraC.class, KillAuraD.class, KillAuraE.class,
+        VelocityA.class, VelocityB.class, VelocityC.class
     };
     /*
     TODO: Remove every @Getter on vars
