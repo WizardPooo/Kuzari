@@ -8,10 +8,10 @@ import com.kuzari.check.impl.aimassist.AimAssistC;
 import com.kuzari.check.impl.badpackets.BadPacketsA;
 import com.kuzari.check.impl.badpackets.BadPacketsB;
 import com.kuzari.check.impl.fly.FlyA;
-import com.kuzari.check.impl.killaura.KillAuraA;
-import com.kuzari.check.impl.killaura.KillAuraB;
-import com.kuzari.check.impl.killaura.KillAuraC;
-import com.kuzari.check.impl.killaura.KillAuraD;
+import com.kuzari.check.impl.fly.FlyB;
+import com.kuzari.check.impl.killaura.*;
+import com.kuzari.check.impl.reach.ReachA;
+import com.kuzari.check.impl.timer.TimerA;
 import com.kuzari.util.location.Direction;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,9 +26,11 @@ public class PlayerData {
     public final Class[] checks = new Class[] {
 
         AimAssistA.class, AimAssistB.class, AimAssistC.class,
-        FlyA.class,
+        FlyA.class, FlyB.class,
+        TimerA.class,
+        ReachA.class,
         BadPacketsA.class, BadPacketsB.class,
-        KillAuraA.class, KillAuraB.class, KillAuraC.class, KillAuraD.class,
+        KillAuraA.class, KillAuraB.class, KillAuraC.class, KillAuraD.class, KillAuraE.class,
     };
     /*
     TODO: Remove every @Getter on vars
@@ -52,6 +54,9 @@ public class PlayerData {
     @Getter
     public com.kuzari.data.impl.ActionManager actionManager = new com.kuzari.data.impl.ActionManager();
     private final com.kuzari.listener.MovementParser movementParser = new com.kuzari.listener.MovementParser();
+
+    @Setter
+    private double playerMoveSpeed;
 
     @Getter @Setter
     public boolean sprinting;

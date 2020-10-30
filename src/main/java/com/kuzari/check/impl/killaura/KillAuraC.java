@@ -22,7 +22,6 @@ public class KillAuraC extends PacketCheck {
         if (packet instanceof PacketPlayInArmAnimation) {
             ++this.swings;
         } else if (packet instanceof PacketPlayInFlying) {
-            //impossible attack actions, noswing, criticals, hit miss ratio, hit miss ratio faking
             if ((this.swings < this.attacks || (this.attacks != 0 && this.swings > this.attacks))) {
                 if(player.getItemInHand().getType() != Material.FISHING_ROD) {
                     this.onViolation(player, "");

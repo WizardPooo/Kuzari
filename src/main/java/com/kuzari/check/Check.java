@@ -41,15 +41,16 @@ public abstract class Check<T> {
 
     public void onViolation(Player player, String debug) {
             for(Player players : org.bukkit.Bukkit.getOnlinePlayers()) {
-                players.sendMessage(org.bukkit.ChatColor.translateAlternateColorCodes('&',  plugin.getFlagmessage().replace("%player%", player.getName()).replace("%check%", name).replace("%type%", type).replace("%vl%", getVl() + "")));
+                if(playerData.isAlerts()) {
+                    players.sendMessage(org.bukkit.ChatColor.translateAlternateColorCodes('&', plugin.getFlagmessage().replace("%player%", player.getName()).replace("%check%", name).replace("%type%", type).replace("%vl%", getVl() + "")));
+                }
             }
             PlayerData data = plugin.getData(player);
             if(!data.isBanned()) {
                 if(getVl() >= maxvl) {
                     data.setBanned(true);
-                    if (playerData.isAlerts()) {
-                        org.bukkit.Bukkit.getServer().dispatchCommand(org.bukkit.Bukkit.getConsoleSender(), plugin.getBanCmd().replace("%player%", player.getName()));
-                    }
+                    org.bukkit.Bukkit.getServer().dispatchCommand(org.bukkit.Bukkit.getConsoleSender(), plugin.getBanCmd().replace("%player%", player.getName()));
+
                 }
             }
 

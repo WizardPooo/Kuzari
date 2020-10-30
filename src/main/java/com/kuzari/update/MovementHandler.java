@@ -3,6 +3,7 @@ package com.kuzari.update;
 import com.kuzari.Kuzari;
 import com.kuzari.check.type.PositionCheck;
 import com.kuzari.update.impl.PositionUpdate;
+import com.kuzari.util.LocationUtil;
 import com.kuzari.util.MathUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
@@ -24,6 +25,8 @@ public class MovementHandler {
         }
         if(playerData == null)
             return;
+        val moveSpeed = LocationUtil.offset(from.toVector(), to.toVector());
+        playerData.setPlayerMoveSpeed(moveSpeed);
         double lastDeltaXZ = playerData.getMovementParser().deltaXZ;
         double deltaXZ = to.clone().toVector().setY(0.0).distance(from.clone().toVector().setY(0.0));
         playerData.getMovementParser().lastDeltaXZ = lastDeltaXZ;
