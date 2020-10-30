@@ -47,7 +47,9 @@ public abstract class Check<T> {
             if(!data.isBanned()) {
                 if(getVl() >= maxvl) {
                     data.setBanned(true);
-                    org.bukkit.Bukkit.getServer().dispatchCommand(org.bukkit.Bukkit.getConsoleSender(), plugin.getBanCmd().replace("%player%", player.getName()));
+                    if (playerData.isAlerts()) {
+                        org.bukkit.Bukkit.getServer().dispatchCommand(org.bukkit.Bukkit.getConsoleSender(), plugin.getBanCmd().replace("%player%", player.getName()));
+                    }
                 }
             }
 

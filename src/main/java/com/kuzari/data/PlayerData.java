@@ -61,6 +61,9 @@ public class PlayerData {
     public boolean onGround;
     public boolean lastLastOnGround;
 
+    @Setter
+    public boolean alerts;
+
     private double velocityX;
     private double velocityY;
     private double velocityZ;
