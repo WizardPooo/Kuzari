@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.azbh111:spigot-1.8.8:R">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/azbh111/spigot-1.8.8/R/spigot-1.8.8-R.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/azbh111/spigot-1.8.8/R/spigot-1.8.8-R-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/azbh111/spigot-1.8.8/R/spigot-1.8.8-R-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
